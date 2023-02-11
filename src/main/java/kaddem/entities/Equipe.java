@@ -2,6 +2,8 @@ package kaddem.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
+
 @Entity
 public class Equipe implements Serializable
 {
@@ -13,5 +15,11 @@ public class Equipe implements Serializable
     private String nameEquipe;
     @Enumerated(EnumType.STRING)
     private Niveau niveau;
+
+    @OneToOne
+    private DetailEquipe detailEquipe;
+
+    @ManyToMany
+    private Set<Etudiant> etudiants;
 }
 
