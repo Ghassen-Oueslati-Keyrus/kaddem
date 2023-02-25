@@ -24,10 +24,12 @@ public class Equipe implements Serializable
     @Enumerated(EnumType.STRING)
     private Niveau niveau;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private DetailEquipe detailEquipe;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     private Set<Etudiant> etudiants;
-}
+    }
+
+
 
